@@ -6,7 +6,9 @@ import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
 import { useBasket } from "./BasketProvider";
 import { BagIcon, DiscordIcon, UserIcon } from "./Icons";
-import { DISCORD_URL } from "@/lib/site";
+import { Config } from "@/config";
+
+const DISCORD_URL = Config.discordUrl;
 
 const SITE_NAV = [
   { href: "/", label: "Home" },

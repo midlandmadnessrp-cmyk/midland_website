@@ -6,7 +6,7 @@ import type { TebexBasket } from "@/lib/types";
 const COOKIE = "mm_basket";
 
 function siteUrl(req: NextRequest) {
-  return (process.env.NEXT_PUBLIC_SITE_URL || req.nextUrl.origin).replace(/\/$/, "");
+  return (process.env.SITE_URL || req.nextUrl.origin).replace(/\/$/, "");
 }
 
 async function existingBasket(): Promise<TebexBasket | null> {

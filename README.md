@@ -14,9 +14,14 @@ npm run dev                  # http://localhost:3000
 | Variable | What it is |
 |---|---|
 | `TEBEX_PUBLIC_TOKEN` | Tebex Creator Panel → Integrations → Headless API → public token. Leave empty to run the built-in demo catalog. |
-| `NEXT_PUBLIC_SITE_URL` | The public URL of the site. Tebex sends players back here after login and checkout. |
-| `NEXT_PUBLIC_DISCORD_URL` | Discord invite. Its live member/online counts show on the home page. Use a **never-expiring** invite. |
-| `NEXT_PUBLIC_CONNECT_URL` | Your `cfx.re/join/...` link. When set, the site shows a "Play now" button that opens FiveM and the live player count. |
+| `SITE_URL` | The public URL of the site (server-only). Tebex sends players back here after login and checkout. |
+
+Public, non-secret settings live in `src/config.ts` (`Config`):
+
+| Setting | What it is |
+|---|---|
+| `discordUrl` | Discord invite. Its live member/online counts show on the home page. Use a **never-expiring** invite. |
+| `connectUrl` | Your `cfx.re/join/...` link. When set, the site shows a "Play now" button that opens FiveM and the live player count. |
 
 In the Tebex panel, add your site's domain to the Headless API allowed origins / return URLs if your account requires it.
 
@@ -45,7 +50,8 @@ src/app/store/[id]/page.tsx   Package detail page
 src/app/api/basket/route.ts   Basket proxy (create, login, add/remove, quantity, coupons)
 src/app/checkout/complete     Post-payment thank-you page
 src/app/terms                 Terms & refund policy
-src/lib/site.ts               Discord / connect links
+src/config.ts                 Public settings (Discord / connect links)
+src/lib/site.ts               Derived links + SEO constants
 src/lib/community.ts          Live Discord + FiveM server stats
 src/lib/tebex.ts              Tebex Headless API client
 src/lib/catalog.ts            Artwork mapping + demo catalog
@@ -59,7 +65,7 @@ Built in: per-page titles/descriptions, canonical URLs, Open Graph + Twitter sha
 (Organization + WebSite on home, Product + Breadcrumb on package pages, ItemList + FAQ on the store).
 Keywords and the main description live in `src/lib/site.ts`.
 
-**`NEXT_PUBLIC_SITE_URL` must be your real domain in production.** Canonical links, the sitemap and share images are built from it.
+**`SITE_URL` must be your real domain in production.** Canonical links, the sitemap and share images are built from it.
 
 After launch: add the site to Google Search Console and submit `https://yourdomain/sitemap.xml`, and link the site from
 your Discord, your FiveM server listing and socials so Google finds it.

@@ -8,10 +8,10 @@ export function Logo({ size = "sm" }: { size?: "sm" | "lg" }) {
       <Image
         src="/logo-sm.webp"
         alt="Midland Madness Roleplay"
-        width={lg ? 126 : 63}
-        height={lg ? 112 : 56}
+        width={lg ? 212 : 149}
+        height={lg ? 80 : 56}
         priority={!lg}
-        className={`w-auto drop-shadow-[0_0_14px_rgba(61,255,90,0.35)] transition-transform duration-300 group-hover:scale-105 ${lg ? "h-28" : "h-14"}`}
+        className={`w-auto drop-shadow-[0_0_14px_rgba(61,255,90,0.35)] transition-transform duration-300 group-hover:scale-105 ${lg ? "h-20" : "h-14"}`}
       />
     </Link>
   );

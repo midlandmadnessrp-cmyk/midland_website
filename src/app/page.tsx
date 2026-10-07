@@ -112,15 +112,15 @@ export default async function Home() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[18rem] sm:max-w-md lg:max-w-none">
+          <div className="relative mx-auto w-full max-w-sm sm:max-w-lg lg:max-w-none">
             <div className="absolute inset-0 m-auto h-3/4 w-3/4 rounded-full bg-neon/25 blur-[100px]" />
             <Image
               src="/logo.webp"
               alt="Midland Madness Roleplay logo"
-              width={1214}
-              height={1082}
+              width={1912}
+              height={719}
               priority
-              sizes="(max-width: 640px) 288px, (max-width: 1024px) 448px, 520px"
+              sizes="(max-width: 640px) 384px, (max-width: 1024px) 512px, 600px"
               className="animate-float relative h-auto w-full drop-shadow-[0_0_50px_rgba(61,255,90,0.35)]"
             />
           </div>
